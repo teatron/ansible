@@ -1,0 +1,11 @@
+---   
+- name: get hostname
+  debug:
+    msg: "{{ inventory_hostname }}" 
+
+- name: install Atop
+  apt:
+    name: "atop"
+    state: present
+    update_cache: yes
+  register: installed_atop_status

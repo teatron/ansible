@@ -1,0 +1,20 @@
+---
+- name: Update default Nginx config
+  become: yes
+  lineinfile: 
+    dest: "{{ nginx_init_file }}"
+    regexp: "listen 80 default_server;"
+    line: "listen 8081 default_server;"
+
+- name: Update2 default Nginx config
+  become: yes
+  lineinfile: 
+    dest: "{{ nginx_init_file }}"
+    regexp: "listen \\[::\\]:80 default_server;"
+    line: "listen [::]:8081 default_server;"
+
+- name: Copy Jenkins config file
+  template: src=jenkins.conf dest="{{ nginx_conf_d }}"
+
+- name: Restsrt Nginx
+  service: name=nginx state=restarted

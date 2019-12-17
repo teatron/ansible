@@ -1,0 +1,11 @@
+---   
+- name: get hostname
+  debug:
+    msg: "{{ inventory_hostname }}" 
+
+- name: install Wget
+  apt:
+    name: "wget"
+    state: present
+    update_cache: yes
+  register: installed_wget_status

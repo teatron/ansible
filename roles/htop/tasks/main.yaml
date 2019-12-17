@@ -1,0 +1,11 @@
+---   
+- name: get hostname
+  debug:
+    msg: "{{ inventory_hostname }}" 
+
+- name: install Htop
+  apt:
+    name: "htop"
+    state: present
+    update_cache: yes
+  register: installed_htop_status

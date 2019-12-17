@@ -1,0 +1,17 @@
+---   
+- name: get hostname
+  debug:
+    msg: "{{ inventory_hostname }}" 
+
+- name: install nginx
+  apt:
+    name: "nginx"
+    state: present
+    update_cache: yes
+  register: installed_nginx_status
+
+# Configure nginx init settings.
+- include_tasks: settings.yml
+
+## Configure nginx proxy and ssl.
+#- include_tasks: nginx_conf.yaml

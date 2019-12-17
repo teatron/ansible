@@ -1,0 +1,10 @@
+############## Hendlers ##############
+- name: start Htop
+  service: 
+    name: htop 
+    state: started
+
+- name: restart Htop
+  service: 
+    name: htop 
+    state: restarted

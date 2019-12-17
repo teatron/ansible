@@ -1,0 +1,10 @@
+############## Hendlers ##############
+- name: start Nginx
+  service: 
+    name: nginx 
+    state: started
+
+- name: stop Nginx
+  service: 
+    name: nginx 
+    state: stopped

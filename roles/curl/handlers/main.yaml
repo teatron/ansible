@@ -1,0 +1,10 @@
+############## Hendlers ##############
+- name: start Curl
+  service: 
+    name: curl
+    state: started
+
+- name: restart Curl
+  service: 
+    name: curl
+    state: restarted

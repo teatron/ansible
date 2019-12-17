@@ -1,0 +1,13 @@
+---
+- name: Get certificate
+  include_role:
+    name: letsencrypt
+
+- name: Creating Nginx configs
+  register: nginx_conf_file
+  template:
+    src: "jenkins_ssl_proxy.conf.j2"
+    dest: /etc/nginx/conf.d/jenkins.conf
+  notify:
+  - restart Nginx
+

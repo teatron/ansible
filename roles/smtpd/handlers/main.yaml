@@ -1,0 +1,10 @@
+############## Hendlers ##############
+- name: start Opensmtpd
+  service: 
+    name: opensmtpd 
+    state: started
+
+- name: restart Opensmtpd
+  service: 
+    name: opensmtpd
+    state: restarted

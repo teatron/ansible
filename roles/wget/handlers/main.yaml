@@ -1,0 +1,10 @@
+############## Hendlers ##############
+- name: start Wget
+  service: 
+    name: wget
+    state: started
+
+- name: restart Wget
+  service: 
+    name: wget
+    state: restarted

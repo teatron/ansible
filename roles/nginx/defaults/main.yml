@@ -1,0 +1,9 @@
+---
+nginx_home: /etc/nginx
+nginx_hostname: localhost
+nginx_http_port: 8081
+nginx_http_host: 127.0.0.1
+nginx_http_host_allow: 217.12.196.34
+nginx_init_file: /etc/nginx/sites-available/default
+nginx_conf_d: /etc/nginx/conf.d/
+

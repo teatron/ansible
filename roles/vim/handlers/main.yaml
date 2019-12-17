@@ -1,0 +1,10 @@
+############## Hendlers ##############
+- name: start Vim
+  service: 
+    name: vim 
+    state: started
+
+- name: restart Vim
+  service: 
+    name: vim
+    state: restarted

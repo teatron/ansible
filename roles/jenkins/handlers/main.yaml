@@ -1,0 +1,10 @@
+############## Hendlers ##############
+- name: start Jenkins
+  service: 
+    name: jenkins
+    state: started
+
+- name: restart Jenkins
+  service: 
+    name: jenkins 
+    state: restarted

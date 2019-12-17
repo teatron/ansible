@@ -1,0 +1,11 @@
+---   
+- name: get hostname
+  debug:
+    msg: "{{ inventory_hostname }}" 
+
+- name: install Vim
+  apt:
+    name: "vim"
+    state: present
+    update_cache: yes
+  register: installed_vim_status
