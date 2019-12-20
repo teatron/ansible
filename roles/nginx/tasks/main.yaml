@@ -3,15 +3,22 @@
   debug:
     msg: "{{ inventory_hostname }}" 
 
-- name: install nginx
+- name: install nginx for ubuntu
   apt:
     name: "nginx"
     state: present
     update_cache: yes
+  when: ansible_distribution == 'Ubuntu'
   register: installed_nginx_status
+
+- name: Install nginx on rpm-based distributive
+  yum:
+    name: "nginx"
+    state: present
+  when: ansible_distribution == 'CentOS'
 
 # Configure nginx init settings.
 - include_tasks: settings.yml
 
 ## Configure nginx proxy and ssl.
-#- include_tasks: nginx_conf.yaml
+- include_tasks: nginx_conf.yaml

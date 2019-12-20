@@ -1,0 +1,14 @@
+---
+- include: centos_repo.yml
+
+- name: packages centos
+  yum:
+    name:
+      - htop
+      - atop
+      - iftop
+      - vim-enhanced
+      - wget
+      - curl
+      - net-snmp
+    state: present

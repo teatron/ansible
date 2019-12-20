@@ -3,14 +3,17 @@
   remote_user: ubuntu
   become: true
   become_method: sudo
+  gather_facts: true
   roles:
-    - { role: htop, tags: htop }
+    - { role: OS, tags: OS }
+#    - { role: htop, tags: htop }
 #    - { role: letsencrypt, tags: letsencrypt }
-    - { role: atop, tags: atop }
-    - { role: iftop, tags: iftop }
-    - { role: vim, tags: vim }
-    - { role: wget, tags: wget }
-    - { role: curl, tags: curl }
-    - { role: smtpd, tags: opensmtpd }
+#    - { role: atop, tags: atop }
+#    - { role: iftop, tags: iftop }
+#    - { role: vim, tags: vim }
+#    - { role: wget, tags: wget }
+#    - { role: curl, tags: curl }
+#    - { role: smtpd, tags: opensmtpd }
     - { role: geerlingguy.jenkins, tags: geerlingguy.jenkins }
     - { role: nginx, tags: nginx }
+    - { role: letsencrypt, tags: letsencrypt }

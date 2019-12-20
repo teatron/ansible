@@ -1,0 +1,10 @@
+---
+  roles:
+    - { role: OS, tags: OS }
+    - { role: htop, tags: htop }
+    - { role: atop, tags: atop }
+    - { role: iftop, tags: iftop }
+    - { role: vim, tags: vim }
+    - { role: wget, tags: wget }
+    - { role: curl, tags: curl }
+    - { role: smtpd, tags: opensmtpd }
